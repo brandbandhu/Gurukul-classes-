@@ -1,7 +1,7 @@
 import { PlayCircle } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionTitle } from "@/components/SectionTitle";
-import { VIDEOS } from "@/data/site";
+import { SITE, VIDEOS } from "@/data/site";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroStudents from "@/assets/hero-students.jpg";
 import heroStudy from "@/assets/hero-study.jpg";
@@ -22,7 +22,7 @@ export function Videos() {
                 <div className="relative aspect-video overflow-hidden">
                   <img src={COVERS[index % COVERS.length]} alt={video.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-brand-ink/40 flex items-center justify-center">
-                    <a href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noopener noreferrer" aria-label={`Play ${video.title}`} className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2563EB] shadow-card transition-transform group-hover:scale-105">
+                    <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label={`Open ${video.title}`} className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2563EB] shadow-card transition-transform group-hover:scale-105">
                       <PlayCircle className="h-8 w-8 text-white" />
                     </a>
                   </div>

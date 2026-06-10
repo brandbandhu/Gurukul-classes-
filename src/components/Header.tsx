@@ -11,7 +11,14 @@ type NavItem =
 
 const NAV: NavItem[] = [
   { label: "Home", to: "/" },
-  { label: "About Us", to: "/about" },
+  {
+    label: "About Us",
+    children: [
+      { label: "About Gurukul", to: "/about" },
+      { label: "Vaibhav Sir Profile", to: "/vaibhav-sir" },
+      { label: "Bhagyashree Madam Profile", to: "/bhagyashree-madam" },
+    ],
+  },
   {
     label: "School",
     children: [

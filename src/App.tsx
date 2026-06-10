@@ -7,11 +7,13 @@ import { BackToTop } from "@/components/BackToTop";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { Home } from "@/routes";
 import { About } from "@/routes/about";
+import { BhagyashreeMadamProfile } from "@/routes/bhagyashree-madam";
 import { Career } from "@/routes/career";
 import { Contact } from "@/routes/contact";
 import { Gallery } from "@/routes/gallery";
 import { PressRelease } from "@/routes/press-release";
 import { Results } from "@/routes/results";
+import { VaibhavSirProfile } from "@/routes/vaibhav-sir";
 import { Videos } from "@/routes/videos";
 import { CourseIitJee } from "@/routes/courses.iit-jee";
 import { CourseIxSscCbse } from "@/routes/courses.ix-ssc-cbse";
@@ -25,6 +27,8 @@ import { CourseXiiScience } from "@/routes/courses.xii-science";
 const ROUTES: Record<string, { title: string; Component: () => JSX.Element }> = {
   "/": { title: "Gurukul Science Classes - IIT-JEE, NEET, MH-CET Coaching", Component: Home },
   "/about": { title: "About Us - Gurukul Science Classes", Component: About },
+  "/vaibhav-sir": { title: "Vaibhav Sir Profile - Gurukul Science Classes", Component: VaibhavSirProfile },
+  "/bhagyashree-madam": { title: "Bhagyashree Madam Profile - Gurukul Science Classes", Component: BhagyashreeMadamProfile },
   "/career": { title: "Career - Gurukul Science Classes", Component: Career },
   "/contact": { title: "Contact - Gurukul Science Classes", Component: Contact },
   "/gallery": { title: "Gallery - Gurukul Science Classes", Component: Gallery },

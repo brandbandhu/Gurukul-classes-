@@ -4,6 +4,14 @@ import { ResultCard } from "@/components/ResultCard";
 import { StatsCounter } from "@/components/StatsCounter";
 import { RESULTS } from "@/data/site";
 
+const DISPLAY_RESULTS = [
+  { name: "Aarohi P.", exam: "NEET 2025", score: "Topper photo pending", college: "Final result data required" },
+  { name: "Vedant K.", exam: "JEE Main 2025", score: "Score pending", college: "Final admission data required" },
+  { name: "Mihika S.", exam: "MH-CET 2025", score: "Percentile pending", college: "Final result data required" },
+  { name: "Samarth R.", exam: "HSC Science 2025", score: "Marks pending", college: "Final result data required" },
+  ...RESULTS,
+];
+
 export function Results() {
   const grouped = ["NEET", "JEE", "MH-CET", "HSC"];
   return (
@@ -18,7 +26,7 @@ export function Results() {
         <div className="container mx-auto px-4">
           <SectionTitle eyebrow="Toppers" title="Recent Result Showcase" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {RESULTS.map((result) => <ResultCard key={result.name} result={result} />)}
+            {DISPLAY_RESULTS.map((result) => <ResultCard key={`${result.exam}-${result.name}`} result={result} />)}
           </div>
         </div>
       </section>

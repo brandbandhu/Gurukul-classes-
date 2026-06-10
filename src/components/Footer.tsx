@@ -17,11 +17,17 @@ export function Footer() {
               programs. 10,000+ successful students and counting.
             </p>
             <div className="mt-5 flex gap-3">
-              {[Facebook, Instagram, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Facebook, href: SITE.socials.facebook, label: "Facebook" },
+                { Icon: Instagram, href: SITE.socials.instagram, label: "Instagram" },
+                { Icon: Youtube, href: SITE.socials.youtube, label: "YouTube" },
+              ].map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
-                  aria-label="social"
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 hover:bg-gradient-brand hover:border-transparent transition-all"
                 >
                   <Icon className="h-4 w-4" />
@@ -35,6 +41,8 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-white/70">
               {[
                 ["About Us", "/about"],
+                ["Vaibhav Sir Profile", "/vaibhav-sir"],
+                ["Bhagyashree Madam Profile", "/bhagyashree-madam"],
                 ["Courses", "/courses/xi-science"],
                 ["Results", "/results"],
                 ["Gallery", "/gallery"],

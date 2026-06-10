@@ -5,6 +5,8 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { StatsCounter } from "@/components/StatsCounter";
 import aboutTeaching from "@/assets/about-teaching.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
+import bhagyashreeThakare from "@/assets/bhagyashree-thakare.jpg";
+import vaibhavThakare from "@/assets/vaibhav-thakare.jpg";
 
 
 const VALUES = [
@@ -37,14 +39,15 @@ export function About() {
           <div>
             <SectionTitle eyebrow="Our Story" title="Built on trust. Powered by results." align="left" />
             <p className="text-muted-foreground leading-relaxed text-lg">
-              Gurukul Science Classes was founded with one belief — every committed student deserves
-              a teacher who genuinely cares about their growth. Two decades later, that idea has grown
-              into one of Kalyan and Bhiwandi's most respected coaching institutes for JEE, NEET, MH-CET
-              and Science foundation programs.
+              Gurukul Science Classes is a trusted name for Engineering, Medical, JEE Main and
+              Advanced, NEET and MHT-CET preparation. The institute focuses on a positive learning
+              environment where students build curiosity, critical thinking and confidence in
+              science and technology.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              From a single classroom to five branches and 10,000+ alumni placed across India's top
-              colleges, our journey is the journey of the students and families who chose us.
+              Our classrooms combine expert faculty, comprehensive study material, interactive
+              learning, regular assessment and conceptual understanding with accessible guidance
+              for families across Kalyan and Bhiwandi.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="rounded-2xl border border-border bg-white p-5 shadow-soft">
@@ -63,6 +66,48 @@ export function About() {
       </section>
 
       <StatsCounter />
+
+      <section className="bg-white py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <SectionTitle
+            eyebrow="Leadership"
+            title="Founder and Director"
+            description="Meet the people behind Gurukul's academic culture and student-first guidance."
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              {
+                name: "Vaibhav Thakare",
+                role: "Founder Mentor",
+                image: vaibhavThakare,
+                path: "/vaibhav-sir",
+                text: "A vision for quality education, interactive learning and result-focused mentoring.",
+              },
+              {
+                name: "Bhagyashree Vaibhav Thakare",
+                role: "Director since 2006",
+                image: bhagyashreeThakare,
+                path: "/bhagyashree-madam",
+                text: "Focused on student support, character building and a vibrant learning culture.",
+              },
+            ].map((person) => (
+              <Link
+                key={person.name}
+                to={person.path}
+                className="group grid overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:grid-cols-[180px_1fr]"
+              >
+                <img src={person.image} alt={person.name} className="h-64 w-full object-cover sm:h-full" />
+                <div className="p-6">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB]">{person.role}</p>
+                  <h3 className="mt-2 text-2xl font-bold text-brand-ink">{person.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{person.text}</p>
+                  <span className="mt-5 inline-flex text-sm font-bold text-[#2563EB]">View profile</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 md:py-24 bg-[#F6F8FA] mt-12">
         <div className="container mx-auto px-4">

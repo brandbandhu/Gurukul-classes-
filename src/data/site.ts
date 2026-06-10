@@ -8,9 +8,14 @@ export const SITE = {
   shortName: "Gurukul",
   tagline: "IIT-JEE | Medical | Foundation Coaching",
   email: "gurukulclasses2@gmail.com",
-  primaryPhone: "+91 9833036464",
-  primaryPhoneRaw: "+919833036464",
-  whatsapp: "919833036464",
+  primaryPhone: "+91 9820363807",
+  primaryPhoneRaw: "+919820363807",
+  whatsapp: "919820363807",
+  socials: {
+    facebook: "https://www.facebook.com/GurukulScienceClasses/",
+    instagram: "https://www.instagram.com/gurukulscienceclasses",
+    youtube: "https://www.youtube.com/@gurukulscienceclasses1866",
+  },
 };
 
 export interface Branch {
@@ -83,6 +88,9 @@ export interface Course {
   tone: "red" | "yellow" | "orange" | "deep";
   category: "School" | "College" | "Entrance";
   highlights: string[];
+  duration?: string;
+  schedule?: string;
+  included?: string[];
 }
 
 export const COURSES: Course[] = [
@@ -284,6 +292,10 @@ export const TESTIMONIALS = [
   { name: "Mrs. Deshpande", role: "Parent, Class XII", text: "Regular parent updates and a sincere mentor team — Gurukul felt like a true partner in my daughter's preparation." },
   { name: "Saanvi Kulkarni", role: "MH-CET Topper", text: "The CET-pattern mock tests and speed drills made me exam-ready months in advance. Highly recommended." },
   { name: "Aarav Joshi", role: "XI Science Student", text: "Best integrated programme in Kalyan. I never feel boards and entrance are two different things anymore." },
+  { name: "Prisha Nair", role: "Class X Student", text: "Chapter tests and correction sessions helped me understand exactly where I was losing marks." },
+  { name: "Mr. Kulkarni", role: "Parent, IX Foundation", text: "The regular updates gave us confidence that our child was building habits, not just attending classes." },
+  { name: "Devansh Shah", role: "JEE Main Aspirant", text: "The faculty explained difficult physics problems step by step and made revision feel manageable." },
+  { name: "Ira More", role: "XII Science Student", text: "The test schedule kept me consistent through the year and helped me prepare for boards and CET together." },
 ];
 
 export const RESULTS = [

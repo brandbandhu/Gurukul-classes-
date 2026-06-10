@@ -1,9 +1,25 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ClipboardCheck, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { BranchCard } from "@/components/BranchCard";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { BRANCHES, SITE } from "@/data/site";
+
+const CONTENT_CHECKLIST = [
+  { item: "Logo and favicon", status: "Available", note: "High-res logo and favicon assets are added." },
+  { item: "Brand colours", status: "Available", note: "Current palette uses ink, white, light blue and primary blue." },
+  { item: "Main enquiry email and WhatsApp", status: "Available", note: `${SITE.email} / +${SITE.whatsapp}` },
+  { item: "Requested pages", status: "Available", note: "Home, About, profiles, School, College, Entrance, Updates, Career and Contact are built." },
+  { item: "Course details", status: "Available", note: "Each course page shows overview, duration, schedule and inclusions." },
+  { item: "Founder and director photos", status: "Pending", note: "Profile pages are ready; replace placeholders with high-res photos." },
+  { item: "Classroom, lab, faculty, event photos", status: "Partial", note: "Base visuals are added; original branch albums are still needed." },
+  { item: "Faculty list with photos and bios", status: "Pending", note: "Names, photos and short bios are required." },
+  { item: "2024 and 2025 results", status: "Partial", note: "2024 showcase and 2025 placeholders exist; final 2025 data is required." },
+  { item: "Testimonials with photos", status: "Partial", note: "9 testimonials are added; student/parent photos are still required." },
+  { item: "Press, awards, gallery and PDFs", status: "Partial", note: "Pages exist; clippings, certificate photos and syllabus PDFs are required." },
+  { item: "WordPress admin login", status: "Pending", note: "Admin login must be shared privately and is not published on the site." },
+  { item: "Social media links", status: "Available", note: "Facebook, Instagram and YouTube links are connected from the live site." },
+];
 
 export function Contact() {
   return (
@@ -55,6 +71,30 @@ export function Contact() {
             </div>
           </div>
           <EnquiryForm variant="contact" title="Contact Form" />
+        </div>
+      </section>
+
+      <section className="bg-[#F6F8FA] py-16">
+        <div className="container mx-auto px-4">
+          <SectionTitle
+            eyebrow="Website Content"
+            title="Information checklist"
+            description="A live status of the items required to fully complete the Gurukul website content."
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {CONTENT_CHECKLIST.map((row) => (
+              <div key={row.item} className="rounded-2xl border border-border bg-white p-5 shadow-soft">
+                <div className="flex items-start justify-between gap-4">
+                  <ClipboardCheck className="mt-0.5 h-5 w-5 text-[#2563EB]" />
+                  <span className="rounded-full bg-[#EAF1FF] px-3 py-1 text-xs font-bold text-[#2563EB]">
+                    {row.status}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-bold text-brand-ink">{row.item}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.note}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

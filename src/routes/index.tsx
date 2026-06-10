@@ -273,7 +273,7 @@ export function Home() {
           <div className="relative aspect-video rounded-3xl overflow-hidden shadow-card border-4 border-white">
             <img src={heroStudy} alt="Gurukul campus tour" className="h-full w-full object-cover" loading="lazy" />
             <div className="absolute inset-0 bg-brand-ink/40 flex items-center justify-center">
-              <a href="#" aria-label="Play video" className="flex h-20 w-20 items-center justify-center rounded-full bg-[#2563EB] shadow-card animate-float">
+              <a href={SITE.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Open Gurukul YouTube channel" className="flex h-20 w-20 items-center justify-center rounded-full bg-[#2563EB] shadow-card animate-float">
                 <PlayCircle className="h-10 w-10 text-white" />
               </a>
             </div>

@@ -1,21 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Briefcase, GraduationCap, HeartHandshake, Trophy } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { EnquiryForm } from "@/components/EnquiryForm";
-
-export const Route = createFileRoute("/career")({
-  head: () => ({
-    meta: [
-      { title: "Careers — Join Gurukul Science Classes Faculty" },
-      { name: "description", content: "Join Gurukul Science Classes as faculty. Open roles for Physics, Chemistry, Math and Biology teachers across Kalyan and Bhiwandi." },
-      { property: "og:title", content: "Careers at Gurukul Science Classes" },
-      { property: "og:url", content: "/career" },
-    ],
-    links: [{ rel: "canonical", href: "/career" }],
-  }),
-  component: Career,
-});
 
 const PERKS = [
   { Icon: Trophy, title: "Performance Bonus", text: "Result-linked bonuses on top of an attractive base." },
@@ -24,7 +10,7 @@ const PERKS = [
   { Icon: Briefcase, title: "Long-term Career", text: "Stable, full-time roles with clear progression." },
 ];
 
-function Career() {
+export function Career() {
   return (
     <>
       <PageHero
@@ -56,20 +42,20 @@ function Career() {
             <SectionTitle eyebrow="Open Roles" title="We're looking for senior faculty" align="left" />
             <ul className="space-y-3">
               {[
-                "Senior Physics Faculty — JEE / NEET",
-                "Senior Chemistry Faculty — JEE / NEET",
-                "Mathematics Faculty — JEE / MH-CET",
-                "Biology Faculty — NEET",
-                "Academic Counsellor — Kalyan & Bhiwandi",
-              ].map((r) => (
-                <li key={r} className="flex items-start gap-3 rounded-2xl border border-border bg-white p-4 shadow-soft">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-brand text-white text-xs font-bold">★</span>
-                  <span className="text-sm font-semibold text-brand-ink">{r}</span>
+                "Senior Physics Faculty - JEE / NEET",
+                "Senior Chemistry Faculty - JEE / NEET",
+                "Mathematics Faculty - JEE / MH-CET",
+                "Biology Faculty - NEET",
+                "Academic Counsellor - Kalyan & Bhiwandi",
+              ].map((role) => (
+                <li key={role} className="flex items-start gap-3 rounded-2xl border border-border bg-white p-4 shadow-soft">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-brand text-white text-xs font-bold">*</span>
+                  <span className="text-sm font-semibold text-brand-ink">{role}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <EnquiryForm variant="career" title="Apply Now" subtitle="Share your details and resume — our HR team will reach out." />
+          <EnquiryForm variant="career" title="Apply Now" subtitle="Share your details and resume - our HR team will reach out." />
         </div>
       </section>
     </>

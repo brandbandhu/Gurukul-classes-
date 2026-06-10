@@ -1,24 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { Award, BookOpenCheck, Compass, Heart, ShieldCheck, Sparkles, Target, Users } from "lucide-react";
+import { AppLink as Link } from "@/components/AppLink";
 import { PageHero } from "@/components/PageHero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { StatsCounter } from "@/components/StatsCounter";
 import aboutTeaching from "@/assets/about-teaching.jpg";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us — Gurukul Science Classes" },
-      { name: "description", content: "Learn about Gurukul Science Classes — our story, our faculty, our mission to mentor every student into a top medical, engineering or science college." },
-      { property: "og:title", content: "About Gurukul Science Classes" },
-      { property: "og:description", content: "25+ years of mentoring students into top colleges across India." },
-      { property: "og:url", content: "/about" },
-    ],
-    links: [{ rel: "canonical", href: "/about" }],
-  }),
-  component: About,
-});
 
 const VALUES = [
   { Icon: Target, title: "Result Driven", text: "Every plan is reverse-engineered from the outcome students aspire to." },
@@ -27,7 +14,7 @@ const VALUES = [
   { Icon: Compass, title: "Guidance", text: "Mentors who stay involved beyond the classroom." },
 ];
 
-function About() {
+export function About() {
   return (
     <>
       <PageHero

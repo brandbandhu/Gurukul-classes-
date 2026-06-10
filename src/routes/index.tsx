@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Award, BookOpenCheck, ChevronRight, GraduationCap, PlayCircle, Quote, Sparkles, Trophy, Users } from "lucide-react";
 import { useEffect, useState } from "react";
+import { AppLink as Link } from "@/components/AppLink";
 import { HeroCarousel } from "@/components/HeroCarousel";
 import { StatsCounter } from "@/components/StatsCounter";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -14,21 +14,8 @@ import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroStudents from "@/assets/hero-students.jpg";
 import heroStudy from "@/assets/hero-study.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Gurukul Science Classes — IIT-JEE, NEET, MH-CET Coaching in Kalyan & Bhiwandi" },
-      { name: "description", content: "Premium coaching for IIT-JEE, NEET, MH-CET & Foundation in Kalyan and Bhiwandi. 10,000+ students placed in top colleges. Admissions open for 2026." },
-      { property: "og:title", content: "Gurukul Science Classes" },
-      { property: "og:description", content: "IIT-JEE, NEET, MH-CET & Foundation coaching — proven results, expert faculty, 5 branches." },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Home,
-});
 
-function Home() {
+export function Home() {
   return (
     <>
       {/* 1. Hero */}

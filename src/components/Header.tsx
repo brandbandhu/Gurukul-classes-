@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
+import { AppLink } from "@/components/AppLink";
 import { Logo } from "./Logo";
 import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -95,7 +95,7 @@ export function Header() {
           <nav className="hidden xl:flex items-center gap-1">
             {NAV.map((item) =>
               "to" in item ? (
-                <Link
+                <AppLink
                   key={item.label}
                   to={item.to}
                   className="rounded-lg px-3 py-2 text-sm font-semibold text-brand-ink/80 hover:text-brand-red hover:bg-brand-light transition-colors"
@@ -103,7 +103,7 @@ export function Header() {
                   activeOptions={{ exact: item.to === "/" }}
                 >
                   {item.label}
-                </Link>
+                </AppLink>
               ) : (
                 <div key={item.label} className="group relative">
                   <button className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold text-brand-ink/80 hover:text-brand-red hover:bg-brand-light transition-colors">
@@ -113,14 +113,14 @@ export function Header() {
                   <div className="absolute left-0 top-full pt-2 hidden group-hover:block min-w-[220px]">
                     <div className="rounded-xl border border-border bg-white p-2 shadow-card">
                       {item.children.map((c) => (
-                        <Link
+                        <AppLink
                           key={c.to}
                           to={c.to}
                           className="block rounded-md px-3 py-2 text-sm text-brand-ink/80 hover:bg-brand-light hover:text-brand-red"
                           activeProps={{ className: "bg-brand-light text-brand-red" }}
                         >
                           {c.label}
-                        </Link>
+                        </AppLink>
                       ))}
                     </div>
                   </div>
@@ -160,14 +160,14 @@ export function Header() {
             <div className="container mx-auto px-4 py-3 space-y-1 max-h-[75vh] overflow-y-auto">
               {NAV.map((item) =>
                 "to" in item ? (
-                  <Link
+                  <AppLink
                     key={item.label}
                     to={item.to}
                     onClick={() => setOpenMobile(false)}
                     className="block rounded-md px-3 py-2 font-semibold text-brand-ink/90 hover:bg-brand-light hover:text-brand-red"
                   >
                     {item.label}
-                  </Link>
+                  </AppLink>
                 ) : (
                   <div key={item.label}>
                     <button
@@ -187,14 +187,14 @@ export function Header() {
                     {openMobileDropdown === item.label && (
                       <div className="ml-3 mt-1 space-y-1 border-l-2 border-brand-red/30 pl-3">
                         {item.children.map((c) => (
-                          <Link
+                          <AppLink
                             key={c.to}
                             to={c.to}
                             onClick={() => setOpenMobile(false)}
                             className="block rounded-md px-3 py-2 text-sm text-brand-ink/80 hover:bg-brand-light hover:text-brand-red"
                           >
                             {c.label}
-                          </Link>
+                          </AppLink>
                         ))}
                       </div>
                     )}

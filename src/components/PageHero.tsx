@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
+import { AppLink } from "@/components/AppLink";
 
 interface Crumb { label: string; to?: string }
 
@@ -14,11 +14,11 @@ export function PageHero({
       <div className="container relative mx-auto px-4 text-center">
         {crumbs.length > 0 && (
           <nav className="mb-4 flex justify-center items-center gap-1 text-xs text-white/70">
-            <Link to="/" className="hover:text-brand-yellow">Home</Link>
+            <AppLink to="/" className="hover:text-brand-yellow">Home</AppLink>
             {crumbs.map((c, i) => (
               <span key={i} className="flex items-center gap-1">
                 <ChevronRight className="h-3 w-3" />
-                {c.to ? <Link to={c.to} className="hover:text-brand-yellow">{c.label}</Link> : <span className="text-brand-yellow">{c.label}</span>}
+                {c.to ? <AppLink to={c.to} className="hover:text-brand-yellow">{c.label}</AppLink> : <span className="text-brand-yellow">{c.label}</span>}
               </span>
             ))}
           </nav>

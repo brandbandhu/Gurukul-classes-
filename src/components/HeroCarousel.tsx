@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Phone, Sparkles, Star } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import heroClassroom from "@/assets/hero-classroom.jpg";
 import heroStudents from "@/assets/hero-students.jpg";
 import heroStudy from "@/assets/hero-study.jpg";
@@ -90,12 +90,12 @@ export function HeroCarousel() {
             >
               Enquire Now <ArrowRight className="h-4 w-4" />
             </a>
-            <Link
+            <AppLink
               to="/courses/xi-science"
               className="inline-flex items-center gap-2 rounded-full bg-white/95 px-6 py-3 text-sm font-bold text-brand-ink hover:bg-brand-yellow transition-colors"
             >
               View Courses
-            </Link>
+            </AppLink>
             <a
               href={`tel:${SITE.primaryPhoneRaw}`}
               className="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-6 py-3 text-sm font-bold text-white hover:bg-white hover:text-brand-ink transition-colors"

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react";
 import { Logo } from "./Logo";
 import { BRANCHES, SITE } from "@/data/site";
@@ -42,9 +42,9 @@ export function Footer() {
                 ["Contact", "/contact"],
               ].map(([l, to]) => (
                 <li key={to}>
-                  <Link to={to} className="hover:text-brand-yellow transition-colors">
+                  <AppLink to={to} className="hover:text-brand-yellow transition-colors">
                     {l}
-                  </Link>
+                  </AppLink>
                 </li>
               ))}
             </ul>
@@ -62,9 +62,9 @@ export function Footer() {
                 ["Foundation (VIII–X)", "/courses/x-ssc-cbse"],
               ].map(([l, to]) => (
                 <li key={to}>
-                  <Link to={to} className="hover:text-brand-yellow transition-colors">
+                  <AppLink to={to} className="hover:text-brand-yellow transition-colors">
                     {l}
-                  </Link>
+                  </AppLink>
                 </li>
               ))}
             </ul>

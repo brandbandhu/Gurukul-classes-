@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Course } from "@/data/site";
@@ -20,7 +20,7 @@ const toneIcon: Record<Course["tone"], string> = {
 export function CourseCard({ course }: { course: Course }) {
   const Icon = course.icon;
   return (
-    <Link
+    <AppLink
       to={course.path}
       className={cn(
         "group relative flex flex-col rounded-3xl border border-border bg-white p-6 shadow-soft transition-all duration-300",
@@ -53,6 +53,6 @@ export function CourseCard({ course }: { course: Course }) {
           <ArrowRight className="h-4 w-4 text-brand-red transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </Link>
+    </AppLink>
   );
 }

@@ -22,11 +22,13 @@ export function VaibhavSirProfile() {
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto grid gap-12 px-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="overflow-hidden rounded-2xl border border-border bg-[#F6F8FA] shadow-card">
-            <img
-              src={vaibhavThakare}
-              alt="Vaibhav Thakare"
-              className="h-[420px] w-full object-cover"
-            />
+            <div className="flex h-[420px] items-start justify-center bg-[#F2E4D7] p-4">
+              <img
+                src={vaibhavThakare}
+                alt="Vaibhav Thakare"
+                className="h-full w-full object-contain object-top"
+              />
+            </div>
             <div className="border-t border-border bg-white p-5">
               <p className="text-sm font-semibold text-[#2563EB]">Vaibhav Thakare</p>
               <p className="mt-1 text-sm text-muted-foreground">

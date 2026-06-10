@@ -96,7 +96,9 @@ export function About() {
                 to={person.path}
                 className="group grid overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-card sm:grid-cols-[180px_1fr]"
               >
-                <img src={person.image} alt={person.name} className="h-64 w-full object-cover sm:h-full" />
+                <div className="flex h-64 items-start justify-center bg-[#F2E4D7] p-3 sm:h-full">
+                  <img src={person.image} alt={person.name} className="h-full w-full object-contain object-top" />
+                </div>
                 <div className="p-6">
                   <p className="text-xs font-bold uppercase tracking-widest text-[#2563EB]">{person.role}</p>
                   <h3 className="mt-2 text-2xl font-bold text-brand-ink">{person.name}</h3>

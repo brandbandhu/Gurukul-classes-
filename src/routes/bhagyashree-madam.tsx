@@ -54,11 +54,13 @@ export function BhagyashreeMadamProfile() {
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-border bg-[#F6F8FA] shadow-card">
-            <img
-              src={bhagyashreeThakare}
-              alt="Bhagyashree Vaibhav Thakare"
-              className="h-[420px] w-full object-cover"
-            />
+            <div className="flex h-[420px] items-start justify-center bg-[#F2E4D7] p-4">
+              <img
+                src={bhagyashreeThakare}
+                alt="Bhagyashree Vaibhav Thakare"
+                className="h-full w-full object-contain object-top"
+              />
+            </div>
             <div className="border-t border-border bg-white p-5">
               <p className="text-sm font-semibold text-[#2563EB]">Bhagyashree Vaibhav Thakare</p>
               <p className="mt-1 text-sm text-muted-foreground">

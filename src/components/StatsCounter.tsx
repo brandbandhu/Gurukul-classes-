@@ -37,16 +37,17 @@ function StatItem({
 }) {
   const n = useCountUp(value, start);
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-brand-red/10 bg-white px-4 py-5 text-center shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
-      <div className="absolute inset-x-6 top-0 h-1 rounded-b-full bg-gradient-brand opacity-80" />
-      <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-light text-brand-red transition-transform duration-300 group-hover:scale-110">
-        <Icon className="h-5 w-5" />
+    <div className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-4 text-left shadow-soft">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-red">
+        <Icon className="h-4 w-4" />
       </div>
-      <div className="mt-3 text-4xl font-extrabold leading-none text-gradient-brand md:text-5xl">
-        <span>{n.toLocaleString()}</span>
-        <span>{suffix}</span>
+      <div className="min-w-0">
+        <div className="text-3xl font-extrabold leading-none text-brand-red md:text-4xl">
+          <span>{n.toLocaleString()}</span>
+          <span>{suffix}</span>
+        </div>
+        <div className="mt-1 text-[11px] font-bold uppercase tracking-wide text-brand-ink/65 md:text-xs">{label}</div>
       </div>
-      <div className="mt-3 text-xs font-extrabold uppercase tracking-wide text-brand-ink/70 md:text-sm">{label}</div>
     </div>
   );
 }
@@ -69,11 +70,10 @@ export function StatsCounter() {
     return () => io.disconnect();
   }, []);
   return (
-    <section ref={ref} className="relative -mt-14 z-20">
+    <section ref={ref} className="relative -mt-10 z-20">
       <div className="container mx-auto px-4">
-        <div className="relative overflow-hidden rounded-3xl border border-white/80 bg-white p-3 shadow-[0_24px_70px_-28px_rgba(26,26,26,0.35)] md:p-4">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-2 bg-gradient-brand" />
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+        <div className="rounded-2xl border border-border bg-white p-3 shadow-card md:p-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {STATS.map((s, index) => (
               <StatItem key={s.label} {...s} start={start} Icon={STAT_ICONS[index]} />
             ))}

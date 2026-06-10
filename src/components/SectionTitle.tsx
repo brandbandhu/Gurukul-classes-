@@ -18,7 +18,7 @@ export function SectionTitle({ eyebrow, title, description, align = "center", cl
       )}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full border border-brand-red/20 bg-brand-light px-4 py-1 text-xs font-semibold tracking-widest text-brand-red uppercase">
+        <span className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/20 bg-[#EAF1FF] px-4 py-1 text-xs font-semibold tracking-widest text-[#2563EB] uppercase">
           {eyebrow}
         </span>
       )}

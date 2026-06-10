@@ -21,12 +21,12 @@ export function Gallery() {
   return (
     <>
       <PageHero title="Campus & Events" subtitle="A glimpse into the everyday energy of Gurukul." crumbs={[{ label: "Gallery" }]} />
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle eyebrow="Moments" title="Inside Gurukul" />
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
             {IMAGES.map((img, index) => (
-              <figure key={index} className="group break-inside-avoid overflow-hidden rounded-3xl shadow-soft hover:shadow-glow transition-all">
+              <figure key={index} className="group break-inside-avoid overflow-hidden rounded-2xl shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
                 <div className="relative overflow-hidden">
                   <img src={img.src} alt={img.caption} className="w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-ink/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">

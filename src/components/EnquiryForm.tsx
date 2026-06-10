@@ -54,7 +54,7 @@ export function EnquiryForm({ variant = "enquiry", className, title, subtitle }:
     <form
       onSubmit={onSubmit}
       className={cn(
-        "rounded-3xl border border-border bg-white p-6 md:p-8 shadow-card",
+        "rounded-2xl border border-border bg-white p-6 md:p-8 shadow-card",
         className,
       )}
     >
@@ -100,7 +100,7 @@ export function EnquiryForm({ variant = "enquiry", className, title, subtitle }:
       <button
         type="submit"
         disabled={loading}
-        className="btn-shine mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-bold text-white shadow-glow disabled:opacity-60"
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#2563EB] px-6 py-3 text-sm font-bold text-white shadow-card transition-colors hover:bg-[#1D4ED8] disabled:opacity-60"
       >
         {loading ? "Sending…" : "Submit Enquiry"}
         <Send className="h-4 w-4" />
@@ -118,14 +118,14 @@ function Field({
   return (
     <label className="block">
       <span className="text-xs font-semibold text-brand-ink/70 uppercase tracking-wide">
-        {label} {required && <span className="text-brand-red">*</span>}
+        {label} {required && <span className="text-[#2563EB]">*</span>}
       </span>
       <input
         name={name}
         type={type}
         required={required}
         maxLength={120}
-        className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20"
+        className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm focus:border-[#2563EB] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
       />
     </label>
   );
@@ -139,7 +139,7 @@ function FileField({ name, label }: { name: string; label: string }) {
         name={name}
         type="file"
         accept=".pdf,.doc,.docx"
-        className="mt-1 w-full rounded-xl border border-dashed border-border bg-brand-cream px-4 py-2.5 text-sm file:mr-3 file:rounded-full file:border-0 file:bg-gradient-brand file:px-3 file:py-1.5 file:text-xs file:font-bold file:text-white"
+        className="mt-1 w-full rounded-xl border border-dashed border-border bg-[#F6F8FA] px-4 py-2.5 text-sm file:mr-3 file:rounded-lg file:border-0 file:bg-[#2563EB] file:px-3 file:py-1.5 file:text-xs file:font-bold file:text-white"
       />
     </label>
   );
@@ -151,7 +151,7 @@ function SelectField({ name, label, options }: { name: string; label: string; op
       <span className="text-xs font-semibold text-brand-ink/70 uppercase tracking-wide">{label}</span>
       <select
         name={name}
-        className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20"
+        className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm focus:border-[#2563EB] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
       >
         <option value="">Select…</option>
         {options.map((o) => (
@@ -170,7 +170,7 @@ function TextareaField({ name, label, rows = 3 }: { name: string; label: string;
         name={name}
         rows={rows}
         maxLength={800}
-        className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm focus:border-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red/20"
+        className="mt-1 w-full rounded-xl border border-border bg-white px-4 py-2.5 text-sm focus:border-[#2563EB] focus:outline-none focus:ring-2 focus:ring-[#2563EB]/20"
       />
     </label>
   );

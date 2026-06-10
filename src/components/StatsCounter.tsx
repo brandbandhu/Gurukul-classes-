@@ -38,11 +38,11 @@ function StatItem({
   const n = useCountUp(value, start);
   return (
     <div className="flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-4 text-left shadow-soft">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-red">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EAF1FF] text-[#2563EB]">
         <Icon className="h-4 w-4" />
       </div>
       <div className="min-w-0">
-        <div className="text-3xl font-extrabold leading-none text-brand-red md:text-4xl">
+        <div className="text-3xl font-extrabold leading-none text-[#2563EB] md:text-4xl">
           <span>{n.toLocaleString()}</span>
           <span>{suffix}</span>
         </div>

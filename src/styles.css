@@ -244,7 +244,7 @@
     width: 3rem;
     height: 4px;
     border-radius: 4px;
-    background-image: var(--gradient-brand);
+    background: #2563EB;
   }
 }
 

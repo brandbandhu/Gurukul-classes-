@@ -19,13 +19,13 @@ export function Career() {
         crumbs={[{ label: "Career" }]}
       />
 
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle eyebrow="Why Join Us" title="More than a teaching job" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {PERKS.map(({ Icon, title, text }) => (
-              <div key={title} className="rounded-3xl border border-border bg-white p-6 shadow-soft hover:shadow-glow transition-all">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-brand text-white">
+              <div key={title} className="rounded-2xl border border-border bg-white p-6 shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EAF1FF] text-[#2563EB]">
                   <Icon className="h-6 w-6" />
                 </div>
                 <h4 className="mt-4 font-bold text-brand-ink">{title}</h4>
@@ -36,7 +36,7 @@ export function Career() {
         </div>
       </section>
 
-      <section className="py-16 bg-brand-cream">
+      <section className="py-16 bg-[#F6F8FA]">
         <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
           <div>
             <SectionTitle eyebrow="Open Roles" title="We're looking for senior faculty" align="left" />
@@ -49,7 +49,7 @@ export function Career() {
                 "Academic Counsellor - Kalyan & Bhiwandi",
               ].map((role) => (
                 <li key={role} className="flex items-start gap-3 rounded-2xl border border-border bg-white p-4 shadow-soft">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-brand text-white text-xs font-bold">*</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EAF1FF] text-xs font-bold text-[#2563EB]">*</span>
                   <span className="text-sm font-semibold text-brand-ink">{role}</span>
                 </li>
               ))}

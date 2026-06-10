@@ -61,17 +61,13 @@ export function HeroCarousel() {
           <img
             src={s.image}
             alt=""
-            className="h-full w-full object-cover scale-105"
+            className="h-full w-full object-cover scale-105 brightness-[0.9] saturate-[0.65]"
             loading={idx === 0 ? "eager" : "lazy"}
           />
-          <div className="absolute inset-0 bg-gradient-hero mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/80 via-brand-ink/40 to-transparent" />
+          <div className="absolute inset-0 bg-brand-ink/35" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-ink/85 via-brand-ink/45 to-brand-ink/10" />
         </div>
       ))}
-
-      {/* Decorative blobs */}
-      <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-yellow/30 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-brand-red/30 blur-3xl" />
 
       <div className="relative mx-auto grid min-h-[560px] w-full max-w-[1500px] items-center gap-10 px-4 py-16 sm:px-6 lg:min-h-[580px] lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-16 2xl:px-14">
         <div key={i} className="text-white animate-slide-in-left">
@@ -116,9 +112,8 @@ export function HeroCarousel() {
 
         <div className="relative hidden lg:flex justify-end">
           <div key={`img-${i}`} className="relative w-full max-w-[560px] animate-slide-in-right">
-            <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-brand opacity-40 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] border-4 border-white/40 shadow-glow">
-              <img src={slide.image} alt={slide.title} width={680} height={460} className="h-[430px] w-full object-cover" />
+            <div className="relative overflow-hidden rounded-[2rem] border-4 border-white/40 shadow-card">
+              <img src={slide.image} alt={slide.title} width={680} height={460} className="h-[430px] w-full object-cover brightness-[0.94] saturate-[0.58]" />
             </div>
             <div className="absolute -left-8 top-10 rounded-2xl glass-card px-5 py-4 text-sm font-bold text-brand-ink shadow-card animate-float">
               <div className="text-brand-red text-xs uppercase tracking-wider">Topper</div>

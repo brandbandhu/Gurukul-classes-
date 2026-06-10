@@ -3,18 +3,11 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Course } from "@/data/site";
 
-const toneBg: Record<Course["tone"], string> = {
-  red: "from-brand-red/10 to-brand-orange/10",
-  yellow: "from-brand-yellow/20 to-brand-orange/10",
-  orange: "from-brand-orange/15 to-brand-yellow/15",
-  deep: "from-brand-deep/10 to-brand-red/10",
-};
-
 const toneIcon: Record<Course["tone"], string> = {
-  red: "bg-gradient-brand text-white",
-  yellow: "bg-brand-yellow text-brand-ink",
-  orange: "bg-brand-orange text-white",
-  deep: "bg-brand-deep text-white",
+  red: "bg-[#EAF1FF] text-[#2563EB]",
+  yellow: "bg-[#FFF7D6] text-[#A16207]",
+  orange: "bg-[#FFF1E6] text-[#EA580C]",
+  deep: "bg-[#EEF2FF] text-[#4338CA]",
 };
 
 export function CourseCard({ course }: { course: Course }) {
@@ -23,17 +16,16 @@ export function CourseCard({ course }: { course: Course }) {
     <AppLink
       to={course.path}
       className={cn(
-        "group relative flex flex-col rounded-3xl border border-border bg-white p-6 shadow-soft transition-all duration-300",
-        "hover:-translate-y-2 hover:shadow-glow hover:border-brand-red/30",
+        "group relative flex flex-col rounded-2xl border border-border bg-white p-6 shadow-soft transition-all duration-300",
+        "hover:-translate-y-1 hover:border-[#2563EB]/35 hover:shadow-card",
       )}
     >
-      <div className={cn("absolute inset-0 rounded-3xl opacity-0 bg-gradient-to-br transition-opacity duration-300 group-hover:opacity-100", toneBg[course.tone])} />
       <div className="relative flex flex-col h-full">
         <div className="flex items-center justify-between">
-          <div className={cn("flex h-14 w-14 items-center justify-center rounded-2xl shadow-soft transition-transform group-hover:scale-110 group-hover:rotate-6", toneIcon[course.tone])}>
+          <div className={cn("flex h-14 w-14 items-center justify-center rounded-xl transition-transform group-hover:scale-105", toneIcon[course.tone])}>
             <Icon className="h-7 w-7" />
           </div>
-          <span className="rounded-full bg-brand-light px-3 py-1 text-[11px] font-semibold tracking-wide text-brand-red uppercase">
+          <span className="rounded-full bg-[#F6F8FA] px-3 py-1 text-[11px] font-semibold tracking-wide text-brand-ink/65 uppercase">
             {course.category}
           </span>
         </div>
@@ -42,15 +34,15 @@ export function CourseCard({ course }: { course: Course }) {
 
         <div className="mt-4 flex flex-wrap gap-2">
           {course.subjects.map((s) => (
-            <span key={s} className="rounded-full bg-brand-cream px-2.5 py-1 text-[11px] font-medium text-brand-ink/70">
+            <span key={s} className="rounded-full bg-[#F6F8FA] px-2.5 py-1 text-[11px] font-medium text-brand-ink/70">
               {s}
             </span>
           ))}
         </div>
 
         <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4">
-          <span className="text-sm font-semibold text-brand-red">View Details</span>
-          <ArrowRight className="h-4 w-4 text-brand-red transition-transform group-hover:translate-x-1" />
+          <span className="text-sm font-semibold text-[#2563EB]">View Details</span>
+          <ArrowRight className="h-4 w-4 text-[#2563EB] transition-transform group-hover:translate-x-1" />
         </div>
       </div>
     </AppLink>

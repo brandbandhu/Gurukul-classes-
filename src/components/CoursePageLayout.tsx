@@ -16,10 +16,10 @@ export function CoursePageLayout({ course }: { course: Course }) {
         crumbs={[{ label: course.category }, { label: course.title }]}
       />
 
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 grid lg:grid-cols-[1.4fr_1fr] gap-12">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-light px-4 py-1 text-xs font-semibold tracking-widest text-brand-red uppercase">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#EAF1FF] px-4 py-1 text-xs font-semibold tracking-widest text-[#2563EB] uppercase">
               <Sparkles className="h-3.5 w-3.5" /> {course.category} Program
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold"><span className="section-title">Program Overview</span></h2>
@@ -28,7 +28,7 @@ export function CoursePageLayout({ course }: { course: Course }) {
             <div className="mt-10 grid sm:grid-cols-2 gap-4">
               {course.highlights.map((h) => (
                 <div key={h} className="flex items-start gap-3 rounded-2xl border border-border bg-white p-4 shadow-soft">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-brand text-white">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#EAF1FF] text-[#2563EB]">
                     <Check className="h-4 w-4" />
                   </span>
                   <p className="text-sm font-medium text-brand-ink/85">{h}</p>
@@ -36,22 +36,22 @@ export function CoursePageLayout({ course }: { course: Course }) {
               ))}
             </div>
 
-            <div className="mt-10 rounded-3xl bg-gradient-brand-soft border border-brand-red/15 p-6 md:p-8">
+            <div className="mt-10 rounded-2xl border border-[#2563EB]/20 bg-[#F8FAFF] p-6 md:p-8">
               <h3 className="text-xl font-bold text-brand-ink">Subjects Covered</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {course.subjects.map((s) => (
                   <span key={s} className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-ink shadow-soft">
-                    <Icon className="h-4 w-4 text-brand-red" /> {s}
+                    <Icon className="h-4 w-4 text-[#2563EB]" /> {s}
                   </span>
                 ))}
               </div>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3">
-              <a href={`tel:${SITE.primaryPhoneRaw}`} className="btn-shine inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-bold text-white shadow-glow">
+              <a href={`tel:${SITE.primaryPhoneRaw}`} className="inline-flex items-center gap-2 rounded-lg bg-[#2563EB] px-6 py-3 text-sm font-bold text-white shadow-card hover:bg-[#1D4ED8]">
                 <Phone className="h-4 w-4" /> Talk to a Counsellor
               </a>
-              <a href="#enquire" className="inline-flex items-center gap-2 rounded-full border-2 border-brand-red px-6 py-3 text-sm font-bold text-brand-red hover:bg-brand-red hover:text-white transition-colors">
+              <a href="#enquire" className="inline-flex items-center gap-2 rounded-lg border border-[#2563EB] px-6 py-3 text-sm font-bold text-[#2563EB] hover:bg-[#EAF1FF] transition-colors">
                 Download Brochure
               </a>
             </div>
@@ -63,7 +63,7 @@ export function CoursePageLayout({ course }: { course: Course }) {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-brand-cream">
+      <section className="py-16 md:py-24 bg-[#F6F8FA]">
         <div className="container mx-auto px-4">
           <SectionTitle eyebrow="Explore More" title="Other Programs" description="Find the right course for your next academic milestone." />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

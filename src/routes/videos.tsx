@@ -13,16 +13,16 @@ export function Videos() {
   return (
     <>
       <PageHero title="Video Library" subtitle="Watch our classrooms, toppers and campus stories." crumbs={[{ label: "Videos" }]} />
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <SectionTitle eyebrow="Watch" title="Stories from Gurukul" />
           <div className="grid sm:grid-cols-2 gap-8">
             {VIDEOS.map((video, index) => (
-              <div key={video.title} className="group rounded-3xl overflow-hidden border border-border bg-white shadow-soft hover:shadow-glow transition-all">
+              <div key={video.title} className="group overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-card">
                 <div className="relative aspect-video overflow-hidden">
                   <img src={COVERS[index % COVERS.length]} alt={video.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-brand-ink/40 flex items-center justify-center">
-                    <a href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noopener noreferrer" aria-label={`Play ${video.title}`} className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-brand shadow-glow group-hover:scale-110 transition-transform">
+                    <a href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noopener noreferrer" aria-label={`Play ${video.title}`} className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2563EB] shadow-card transition-transform group-hover:scale-105">
                       <PlayCircle className="h-8 w-8 text-white" />
                     </a>
                   </div>
